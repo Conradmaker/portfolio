@@ -8,7 +8,7 @@ import {
   DiJava,
 } from "react-icons/di";
 
-const bling = keyframes`
+export const bling = keyframes`
 from{
     text-shadow: 0 0 20px black;
 }
@@ -33,10 +33,37 @@ const Darker = styled.div`
   top: 0px;
 `;
 
+export const TopButton = styled.a`
+  width: 50px;
+  height: 50px;
+
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: none;
+  border: 2px solid white;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  z-index: 4;
+
+  &:hover {
+    background: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: #616161;
+  }
+`;
+
 const PortContainer = styled.div`
   background: #181818;
 `;
-const Main = styled.section`
+export const Main = styled.section`
   width: 100%;
   height: 100vh;
   position: relative;
@@ -49,7 +76,7 @@ const Main = styled.section`
   background-image: url("https://miro.medium.com/max/3840/1*ivjksIhvAs7TUXbQCxAU0A.jpeg");
   /* https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/04/1493235373large_react_apps_A-01.png */
 `;
-const MainTitle = styled.div`
+export const MainTitle = styled.div`
   animation: ${bling} 1s ease-in-out infinite alternate;
   z-index: 3;
   h1 {
@@ -62,7 +89,7 @@ const MainTitle = styled.div`
     color: #fff;
   }
 `;
-const MainItem = styled.a`
+export const MainItem = styled.a`
   width: 100%;
   padding: 15px 40px;
   display: flex;
@@ -84,10 +111,9 @@ const MainItem = styled.a`
   }
   &:hover {
     animation: ${hoverA} 0.5s ease forwards;
-    color: #fff;
   }
 `;
-const MainCatagory = styled.ul`
+export const MainCatagory = styled.ul`
   width: 70%;
   height: 130px;
   margin: 0 auto;
@@ -104,13 +130,14 @@ const MainCatagory = styled.ul`
 const SkillSummary = styled.div`
   position: sticky;
   top: 100px;
-  text-align: center;
+  text-align: start;
   h1 {
     font-size: 40px;
     padding: 10px;
   }
   span {
     font-size: 18px;
+    padding: 10px;
   }
 `;
 
@@ -124,7 +151,7 @@ const SkillSection = styled.section`
 export default function Port() {
   return (
     <PortContainer>
-      <Main>
+      <Main id="main">
         <Darker />
         <MainTitle>
           <h1>Portfolio</h1>
@@ -199,6 +226,7 @@ export default function Port() {
           <span>Node.js & Express.js & MongoDB & Sequilize</span>
         </SkillSummary>
       </SkillSection>
+      <TopButton href="#main">TOP</TopButton>
     </PortContainer>
   );
 }
