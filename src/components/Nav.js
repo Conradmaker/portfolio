@@ -6,7 +6,6 @@ import {
   MdYoutubeSearchedFor,
   MdKeyboardReturn,
 } from "react-icons/md";
-import { DiGithubBadge } from "react-icons/di";
 import { darken } from "polished";
 
 //KEYFRAMES
